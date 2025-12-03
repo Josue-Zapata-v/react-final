@@ -6,7 +6,7 @@ const Header = () => {
       <div className="container-fluid">
         <Link className="navbar-brand fw-bold" to="/">
           <i className="bi bi-stars me-2"></i>
-          Rick & Morty AI
+          DragonBallApi
         </Link>
         <button
           className="navbar-toggler"
@@ -37,15 +37,7 @@ const Header = () => {
                 Personajes
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                to="/chat"
-              >
-                <i className="bi bi-chat-dots me-1"></i>
-                Chat IA
-              </NavLink>
-            </li>
+            
           </ul>
         </nav>
       </div>
