@@ -12,14 +12,16 @@ export const useCharactersStore = create((set) => ({
     set({ isLoading: true, error: null });
     try {
       const data = await api.getAllCharacters(page);
+
       set({
-        characters: data.results,
-        currentPage: page,
-        totalPages: data.info.pages,
+        characters: data.items,
+        currentPage: data.meta.currentPage,
+        totalPages: data.meta.totalPages,
         isLoading: false,
-      });   
-    } catch (error) {
-      set({ error: error.message, isLoading: false });
+      });
+      
+    } catch (err) {
+      set({ error: err.message, isLoading: false });
     }
   }
 }));
